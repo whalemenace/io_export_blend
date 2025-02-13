@@ -45,6 +45,11 @@ def actually_export(export_scene, filepath):
     bpy.ops.ed.undo_push()
     bpy.ops.ed.undo()
 
+def mark_as_asset(data_block):
+    """Marks the given data block as an asset."""
+    if data_block and hasattr(data_block, "asset_mark"):
+        data_block.asset_mark()
+
 
 def export_blend_objects(context, export_settings):
     print("Exporting objects to .blend...")
